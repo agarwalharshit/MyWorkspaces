@@ -1,0 +1,37 @@
+package com.sjsu;
+
+public class HelloWorld {
+	private String message;	
+	private int num;
+	
+	public HelloWorld(int num){
+		this.num=num;
+	}
+	public HelloWorld(){
+	}
+	
+	
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public void print(){
+		System.out.println(num+"  "+message);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

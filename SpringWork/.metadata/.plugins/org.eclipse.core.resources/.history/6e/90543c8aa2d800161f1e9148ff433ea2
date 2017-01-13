@@ -1,0 +1,25 @@
+package com.sjsu;
+
+public class HelloWorld {
+	private String message;	
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	void abc(){
+		System.out.println("Initialised");
+	}
+	void abc(int a){
+		System.out.println("Initialised with parameter");
+	}
+	void def(){
+		System.out.println("Initialised with parameter");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

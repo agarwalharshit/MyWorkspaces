@@ -1,0 +1,2 @@
+127.0.0.1 - - [11/Jan/2017:14:03:07 -0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [11/Jan/2017:14:03:09 -0800] "GET /SpringWork/WEB-INF/classes/com/sjsu/MainApp.java HTTP/1.1" 404 949

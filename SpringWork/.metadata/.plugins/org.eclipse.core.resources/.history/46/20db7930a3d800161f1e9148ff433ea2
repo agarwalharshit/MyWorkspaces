@@ -1,0 +1,23 @@
+package com.sjsu;
+
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		ApplicationContext ac = new ClassPathXmlApplicationContext("com/sjsu/Beans.xml");
+		HelloWorld hw=(HelloWorld)ac.getBean("helloWorld");
+		System.out.println(hw.getMessage());
+		hw.setMessage("Ramesh");
+		System.out.println(hw.getMessage());
+//		HelloWorld hw1=(HelloWorld)ac.getBean("helloWorld");
+//		System.out.println(hw1.getMessage());
+		ac.registerShutdownHook();
+
+	}
+
+}

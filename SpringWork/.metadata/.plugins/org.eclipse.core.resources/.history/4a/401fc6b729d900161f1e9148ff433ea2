@@ -1,0 +1,21 @@
+package com.sjsu;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class QueryDao {
+
+	private JdbcTemplate jdbcTemplate ;
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+
+
+
+
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

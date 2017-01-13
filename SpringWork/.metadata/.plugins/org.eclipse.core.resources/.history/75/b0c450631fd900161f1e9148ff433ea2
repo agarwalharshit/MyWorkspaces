@@ -1,0 +1,46 @@
+package com.sjsu;
+
+import java.util.*;
+
+public class HelloWorld {
+	private String message;	
+	private int num;
+	private Map<String,Answers> a;
+	
+	public HelloWorld(int num, String message, Map<String,Answers>  a){
+		this.num=num;
+		this.message=message;
+		this.a=a;
+	}
+	public HelloWorld(){
+	}
+	
+	
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+	
+	
+	
+
+	public void print(){
+		System.out.println(num+"  "+message+"Answer No= "+a.get("1").ansNo+" Answer="+a.get("1").ans);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

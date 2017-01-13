@@ -1,0 +1,15 @@
+package com.sjsu;
+
+public class QueryDao {
+
+	private JdbcTemplate jdbcTemplate ;
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

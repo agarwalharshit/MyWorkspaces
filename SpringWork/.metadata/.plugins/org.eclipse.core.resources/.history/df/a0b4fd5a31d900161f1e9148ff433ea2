@@ -1,0 +1,30 @@
+package com.sjsu;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class QueryDao {
+
+	private JdbcTemplate jdbcTemplate ;
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+
+	public void insert(Employee e){
+		//String query="Insert into EMPLOYEES values("+e.getId()+",'"+e.getName()+"','"+e.getAddress()+"')";
+		String query="Insert into EMPLOYEES values("+e.getId()+",'"+e.getName()+"','"+e.getAddress()+"')";
+		
+		System.out.println(query);
+		jdbcTemplate.execute(query,);
+	}
+	public void delete(Employee e){
+		String query="delete from EMPLOYEES where ID="+e.getId();
+		jdbcTemplate.execute(query);
+	}
+
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.sjsu;
+
+public class HelloWorld {
+	private String message;
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
