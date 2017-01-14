@@ -1,0 +1,10 @@
+package com.hibernate;
+
+public class HibernateDao {
+
+	public static void main(String[] args) {
+	Configuration cfg=args get Configuration();
+
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.hibernate;
+
+public class Team {
+
+	int teamId;
+	String teamName;
+	Set<Player> p;
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

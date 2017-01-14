@@ -1,10 +1,14 @@
 package com.sjsu;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.ResultSetExtractor;
 
 import com.mysql.jdbc.PreparedStatement;
 
@@ -44,6 +48,24 @@ public class QueryDao {
 		jdbcTemplate.execute(query);
 	}
 
+	public List<Employee> Select(){
+		String query="Select * from EMPLOYEES";
+		return jdbcTemplate.query(query, new ResultSetExtractor<List<Employee>>(){
+			@Override
+			public List<Employee> extractData(ResultSet rs) throws SQLException{
+				List l = new ArrayList<Employee>();
+				while(rs.next()){
+					Employee e = new Employee();
+					e.setId(rs.getInt(1));
+					e.setName(rs.getString(2));
+					e.setAddress(rs.getString(3));
+					l.add(e);
+				}
+				return l;
+			}
+			
+		});
+	}
 
 	public static void main(String[] args) {
 		
