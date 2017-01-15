@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+ 
+ <hibernate-mapping>
+     <class name="com.hibernate.Team" table="TEAM">
+         <id name="teamId" column="ID">
+             <generator class="assigned"/>
+         </id>
+         <property name="teamName" column="NAME"/>
+
+     </class>
+     
+         <class name="com.hibernate.Player" table="PLAYER">
+         <id name="id" column="ID">
+             <generator class="assigned"/>
+         </id>
+         <property name="name" column="NAME"/>
+         <property name="teamId" column="TEAMID"/>
+         <property name="age" column="AGE"/>
+         <many-to-one name="team" class="com.hibernate.Team" cascade="all" lazy="false"></many-to-one>
+         
+     </class>
+     
+ </hibernate-mapping>

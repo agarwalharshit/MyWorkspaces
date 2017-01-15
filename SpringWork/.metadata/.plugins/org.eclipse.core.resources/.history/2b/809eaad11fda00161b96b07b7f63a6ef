@@ -1,0 +1,8 @@
+package com.hibernate;
+
+public class Player {
+int id;
+String name;
+int teamId;
+int age;
+}
