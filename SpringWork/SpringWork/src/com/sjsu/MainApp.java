@@ -11,21 +11,62 @@ import org.springframework.core.io.ClassPathResource;
 public class MainApp {
 
 	public static void main(String[] args) {
-		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("com/sjsu/Beans.xml");
-		
-		QueryDao qd=(QueryDao)ac.getBean("dao");
-		List<Employee> list=(List<Employee>)qd.Select();
-		for(Employee e:list){
-			System.out.println(e.getId()+"   "+e.getName()+"  "+e.getAddress());
-		}
-		
-//		Employee e = new Employee();
-//		e.setId(11);
-//		e.setName("Harry");
-//		e.setAddress("Jammu");
-//		qd.delete(e);
-//		//hw.print();
+		int[] arr = {1,2,3,2,5,6,7,8};
+MainApp.minLenUnSorted(arr);
 
 	}
+	public static void minLenUnSorted(int[] arr) {
+		  int start, end;
+		  start = end = -1;
 
+		  for (int i = 0; i < arr.length - 1; i++) {
+		    if (arr[i] > arr[i + 1]) {
+		      start = i + 1;
+		      break;
+		    }
+		  }
+
+		  for (int i = arr.length - 1; i > 0; i--) {
+		    if (arr[i] < arr[i - 1]) {
+		      end = i - 1;
+		      break;
+		    }
+		  }
+
+		  if (start > end) {
+		    int t = start;
+		    start = end;
+		    end = t;
+		  }
+		  int maxR = Integer.MIN_VALUE;
+		  int minR = Integer.MAX_VALUE;
+		  // get the max from the range
+		  for (int k = start; k <= end; k++) {
+		    if (arr[k] > maxR) {
+		      maxR = arr[k];
+		    }
+		    if (arr[k] < minR) {
+		      minR = arr[k];
+		    }
+		  }
+
+		  int RStart = -1;
+		  // 1st index fro minR
+		  for (int i = 0; i < arr.length - 1; i++) {
+		    if (arr[i] <= minR && minR <= arr[i + 1]) {
+		      RStart = i + 1;
+		      break;
+		    }
+		  }
+
+		  // 1st index for maxR
+		  int REnd = -1;
+		  for (int i = arr.length - 1; i > 1; i--) {
+		    if (arr[i] >= maxR && maxR >= arr[i - 1]) {
+		      REnd = i - 1;
+		      break;
+		    }
+		  }
+		  System.out.println("is it working Rs - " + RStart + "  Re- " + REnd);
+		}
 }

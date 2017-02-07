@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="/Users/Harshit/Job_Search/GitWorkspaces/MyWorkspaces/SpringWork/hibernatejar" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="/Users/Harshit/Job_Search/GitWorkspaces/MyWorkspaces/SpringWork/spring-framework-4.3.5.RELEASE/libs" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="SourceActionDialog.methods">
 		<item value="false" key="SynchronizedModifier"/>
 		<item value="false" key="Comments"/>

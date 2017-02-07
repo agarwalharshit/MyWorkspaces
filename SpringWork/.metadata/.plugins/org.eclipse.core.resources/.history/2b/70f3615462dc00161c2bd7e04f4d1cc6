@@ -1,0 +1,75 @@
+package com.spring;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class TwitterClass {
+
+	public static void main(String[] args) {
+		String dateConsidet="2015-08,2016-04";
+		int fromYear=Integer.parseInt(dateConsidet.substring(0, 4));
+		int fromMonth=Integer.parseInt(dateConsidet.substring(5, dateConsidet.indexOf(",")));
+		
+		int toYear=Integer.parseInt(dateConsidet.substring(dateConsidet.indexOf(",")+1,dateConsidet.indexOf(",")+5));
+		int toMonth=Integer.parseInt(dateConsidet.substring(dateConsidet.indexOf(",")+6,dateConsidet.length()));
+		System.out.println(fromYear);
+		System.out.println(fromMonth);
+		System.out.println(toYear);
+		System.out.println(toMonth);
+		
+		
+		String inp="2015-09-15,clicks,635";
+		int inputyear = Integer.parseInt(inp.substring(0, 4));
+		int inputmonth = Integer.parseInt(inp.substring(5, 7));
+		List<String> al = new ArrayList<String>();
+		
+		if(inputyear>=fromYear  &&  inputyear<=toYear){
+			if((inputyear==fromYear && inputmonth < fromMonth)||(inputyear==toYear && inputmonth > toMonth) || (inputyear<toYear && inputmonth > fromYear)){
+				//System.out.println("jkjj");
+			}else{
+				al.add(inp);
+				System.out.println("jhkhkjhjk");
+			}
+			
+		}
+		al.add("2015-09-15,aclicks,635");
+		al.add("2015-09-02,bclicks,635");
+		al.add("2015-09-01,fclicks,635");
+		al.add("2015-10-21,atwo,35");
+		al.add("2015-10-09,btwo,35");
+		al.add("2015-10-11,ctwo,35");
+		Collections.sort(al);
+		String x = "";
+		for(String s:al){
+			if(x.equalsIgnoreCase(""))
+				x = al.get(0).substring(0, 7) + al.get(0).substring(10);
+			else{
+		if(x.substring(0,7).equalsIgnoreCase(s.substring(0, 7)))
+			x = x + s.substring(10);
+		else
+		{
+			
+			System.out.println(x);
+			x = s.substring(0, 7) + s.substring(10);
+			
+		}
+			}
+		}
+		
+		
+		
+		
+		
+//		if(inputyear>=fromYear  &&  inputyear<=toYear){
+//			if((inputyear==fromYear && inputmonth >= fromMonth)||(inputyear==toYear && inputmonth <= toMonth) || (inputyear<toYear && inputmonth > fromYear)){
+//				System.out.println("jkjj");
+//			}
+//			
+//		}
+		//System.out.println(inp.substring(0, 7));
+		
+
+	}
+
+}

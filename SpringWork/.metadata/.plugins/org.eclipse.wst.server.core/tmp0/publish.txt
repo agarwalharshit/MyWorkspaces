@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Jan 16 16:43:23 PST 2017
+org.eclipse.jst.jee.server\:/binary\:/Users/Harshit/Job_Search/GitWorkspaces/MyWorkspaces/SpringWork/SpringWork/WebContent/lib/spring-web-4.3.5.RELEASE-sources.jar=lib/spring-web-4.3.5.RELEASE-sources.jar
+org.eclipse.jst.jee.server\:/binary\:/Users/Harshit/Job_Search/GitWorkspaces/MyWorkspaces/SpringWork/SpringWork/WebContent/lib/spring-web-4.3.5.RELEASE.jar=lib/spring-web-4.3.5.RELEASE.jar

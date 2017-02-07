@@ -1,0 +1,24 @@
+package com.spring;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+
+
+public class TwitterClass {
+
+	public static void main(String[] args) {
+PriorityQueue pq = new PriorityQueue();
+pq.add(6);
+pq.add(3);
+pq.add(1);
+pq.add(10);
+System.out.println(pq.peek());
+
+
+	}
+
+}

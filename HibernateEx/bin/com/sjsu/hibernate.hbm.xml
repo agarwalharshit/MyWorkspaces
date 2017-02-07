@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+ 
+ <hibernate-mapping>
+ <class name="com.sjsu.employee" table="EMPLOYEES"> 
+ <id name="empid">
+ <generator class = "assigned"/>
+ </id>
+ <property name="name" column="NAME"/>
+ <property name="department" column="DEPARTMENT"/>
+ 
+ <set name="customer">
+ <key column="EID"></key>
+ <!-- <index column="CNAME"></index> -->
+ <element column="CNAME" type="string"></element>
+<!--  <one-to-many class="com.sjsu.Customer"/>  -->
+ </set>
+ </class>
+ 
+ 
+ 
+ <class name="com.sjsu.Customer" table="CUSTOMER"> 
+ <id name="cid" column="CID">
+ <generator class = "assigned"/>
+ </id>
+ <property name="cname" column="CNAME"/>
+<property name="empid" column="EID"/> 
+ </class>
+ </hibernate-mapping>

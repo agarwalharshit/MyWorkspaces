@@ -1,0 +1,90 @@
+package com.spring;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+
+
+public class TwitterClass {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		
+		String dateConsidet=(scn.nextLine()).trim();
+		String _notused = scn.nextLine();
+		List<String> al = new ArrayList<String>();
+		
+		
+		int fromYear=Integer.parseInt((dateConsidet.substring(0, 4)).trim());
+		int fromMonth=Integer.parseInt((dateConsidet.substring(5, dateConsidet.indexOf(","))).trim());
+		
+		int toYear=Integer.parseInt(dateConsidet.substring(dateConsidet.indexOf(",")+1,dateConsidet.indexOf(",")+5));
+		int toMonth=Integer.parseInt(dateConsidet.substring(dateConsidet.indexOf(",")+6,dateConsidet.length()));
+
+		
+		
+//		List<String> al = new ArrayList<String>();
+		
+//		 while(scn.hasNext()){
+		for(int i=0;i<10;i++){
+			 String inp=scn.nextLine();
+			 if(inp.equals("")){
+				 break;
+			 }
+				int inputyear = Integer.parseInt(inp.substring(0, 4));
+				int inputmonth = Integer.parseInt(inp.substring(5, 7));
+		
+		if(inputyear>=fromYear  &&  inputyear<=toYear){
+			if((inputyear==fromYear && inputmonth < fromMonth)||(inputyear==toYear && inputmonth > toMonth) || (inputyear<toYear && inputmonth > fromYear)){
+				//System.out.println("jkjj");
+			}else{
+				al.add(inp);
+				System.out.println("jhkhkjhjk");
+			}	
+		}
+		
+		 }
+		 
+		 
+		 
+		Collections.sort(al);
+		String x = "";
+		for(String s:al){
+			if(x.equalsIgnoreCase("")){
+				x = al.get(0).substring(0, 7) + al.get(0).substring(10);
+			}
+			else{
+		if(x.substring(0,7).equalsIgnoreCase(s.substring(0, 7)))
+		{
+			x = x +"," + s.substring(11);
+		}
+		else
+		{
+			
+			System.out.println(x);
+			x = s.substring(0, 7) + s.substring(10);
+			
+		}
+			}
+		}
+		if(x!=null)
+		System.out.println(x);
+		
+		
+		
+		
+		
+//		if(inputyear>=fromYear  &&  inputyear<=toYear){
+//			if((inputyear==fromYear && inputmonth >= fromMonth)||(inputyear==toYear && inputmonth <= toMonth) || (inputyear<toYear && inputmonth > fromYear)){
+//				System.out.println("jkjj");
+//			}
+//			
+//		}
+		//System.out.println(inp.substring(0, 7));
+		
+
+	}
+
+}
