@@ -1,0 +1,15 @@
+package com.ctci;
+
+public class LinkedListNode<K> {
+	K data;
+	LinkedListNode<K> next;
+	public LinkedListNode<K>(){
+		next=null;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,8 @@
+package net.webservicex;
+
+public class Snippet {
+	public static void main(String[] args) {
+		net.webservicex
+	}
+}
+

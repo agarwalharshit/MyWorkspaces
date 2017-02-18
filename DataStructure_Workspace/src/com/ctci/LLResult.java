@@ -1,0 +1,51 @@
+package com.ctci;
+
+public class LLResult {
+	LinkedListNode<Integer> node;
+	boolean result;
+	LLResult(boolean result,LinkedListNode<Integer> node){
+		this.result=result;
+		this.node=node;
+	}
+	LLResult(boolean result){
+		this.result=result;
+	}
+	LLResult(){
+		
+	}
+	
+	
+	public LinkedListNode<Integer> getNode() {
+		return node;
+	}
+
+
+
+
+	public void setNode(LinkedListNode<Integer> node) {
+		this.node = node;
+	}
+
+
+
+
+	public boolean isResult() {
+		return result;
+	}
+
+
+
+
+	public void setResult(boolean result) {
+		this.result = result;
+	}
+
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

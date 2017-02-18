@@ -1,0 +1,14 @@
+package com.ctci;
+
+public class sym {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		TreeNode t = new Tree();
+		
+		LinkList<Integer>= new LinkList<>();
+		
+	}
+
+}

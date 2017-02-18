@@ -1,0 +1,54 @@
+package com.sjsu;
+
+public class SumSOAPProxy implements com.sjsu.SumSOAP {
+  private String _endpoint = null;
+  private com.sjsu.SumSOAP sumSOAP = null;
+  
+  public SumSOAPProxy() {
+    _initSumSOAPProxy();
+  }
+  
+  public SumSOAPProxy(String endpoint) {
+    _endpoint = endpoint;
+    _initSumSOAPProxy();
+  }
+  
+  private void _initSumSOAPProxy() {
+    try {
+      sumSOAP = (new com.sjsu.SumSOAPServiceLocator()).getSumSOAP();
+      if (sumSOAP != null) {
+        if (_endpoint != null)
+          ((javax.xml.rpc.Stub)sumSOAP)._setProperty("javax.xml.rpc.service.endpoint.address", _endpoint);
+        else
+          _endpoint = (String)((javax.xml.rpc.Stub)sumSOAP)._getProperty("javax.xml.rpc.service.endpoint.address");
+      }
+      
+    }
+    catch (javax.xml.rpc.ServiceException serviceException) {}
+  }
+  
+  public String getEndpoint() {
+    return _endpoint;
+  }
+  
+  public void setEndpoint(String endpoint) {
+    _endpoint = endpoint;
+    if (sumSOAP != null)
+      ((javax.xml.rpc.Stub)sumSOAP)._setProperty("javax.xml.rpc.service.endpoint.address", _endpoint);
+    
+  }
+  
+  public com.sjsu.SumSOAP getSumSOAP() {
+    if (sumSOAP == null)
+      _initSumSOAPProxy();
+    return sumSOAP;
+  }
+  
+  public void main(java.lang.String[] args){
+    if (sumSOAP == null)
+      _initSumSOAPProxy();
+    sumSOAP.main(args);
+  }
+  
+  
+}

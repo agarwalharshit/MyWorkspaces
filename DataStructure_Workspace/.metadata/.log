@@ -1,0 +1,149 @@
+!SESSION 2017-02-12 09:55:16.568 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/Harshit/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/Harshit/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-02-12 09:55:34.077
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.google.gdt.eclipse.suite 1 0 2017-02-12 09:55:44.285
+!MESSAGE Registering: com.google.appengine.eclipse.sdkbundle_1.9.34
+
+!ENTRY com.google.gdt.eclipse.suite 1 0 2017-02-12 09:55:44.677
+!MESSAGE Registering: com.google.gwt.eclipse.sdkbundle_2.7.0
+
+!ENTRY org.eclipse.ui 4 0 2017-02-12 09:55:47.216
+!MESSAGE The org.eclipse.ui.IStartup extension from 'com.amazonaws.eclipse.android.sdk' does not provide a valid 'startup' element.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-02-12 09:55:47.276
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY org.eclipse.osgi 2 0 2017-02-12 09:55:53.501
+!MESSAGE While loading class "com.amazonaws.eclipse.core.AwsToolkitCore", thread "Thread[Worker-4,5,main]" timed out waiting (5003ms) for thread "Thread[Worker-0,5,main]" to finish starting bundle "com.amazonaws.eclipse.core_2.3.1.v201610311501 [1006]". To avoid deadlock, thread "Thread[Worker-4,5,main]" is proceeding but "com.amazonaws.eclipse.core.AwsToolkitCore" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="2.3.1.v201610311501"; osgi.identity="com.amazonaws.eclipse.core"; singleton:="true" [id=1006] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:334)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:407)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:361)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:353)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at com.amazonaws.eclipse.ec2.keypairs.KeyPairManager.convertLegacyPrivateKeyFiles(KeyPairManager.java:242)
+	at com.amazonaws.eclipse.ec2.Ec2Plugin$2.run(Ec2Plugin.java:120)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 15 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:334)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:407)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:361)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:353)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at com.amazonaws.eclipse.ec2.keypairs.KeyPairManager.convertLegacyPrivateKeyFiles(KeyPairManager.java:242)
+	at com.amazonaws.eclipse.ec2.Ec2Plugin$2.run(Ec2Plugin.java:120)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-02-12 09:55:53.550
+!MESSAGE No profile found: default
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-02-12 09:55:53.678
+!MESSAGE Monitoring content of /Users/Harshit/.aws/credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-02-12 09:55:53.895
+!MESSAGE AWS toolkit core plugin initialized after 6620 milliseconds.
+
+!ENTRY org.eclipse.ui.workbench 4 2 2017-02-12 09:55:53.905
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Executable extension definition for "class" not found.
+	at org.eclipse.core.internal.registry.ConfigurationElement.throwException(ConfigurationElement.java:62)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:222)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:291)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:286)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:53)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2829)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2017-02-12 09:55:53.905
+!MESSAGE Executable extension definition for "class" not found.
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2017-02-12 09:55:53.905
+!MESSAGE Executable extension definition for "class" not found.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-02-12 09:55:53.922
+!MESSAGE The current accountId is not found in the system. Switching to the default account.
+
+!ENTRY org.eclipse.ui 4 0 2017-02-12 09:55:53.964
+!MESSAGE Unable to execute early startup code for the org.eclipse.ui.IStartup extension contributed by the 'com.amazonaws.eclipse.elasticbeanstalk' plug-in.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Executable extension definition for "class" not found.
+	at org.eclipse.core.internal.registry.ConfigurationElement.throwException(ConfigurationElement.java:62)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:222)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:291)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:286)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:53)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2829)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2017-02-12 09:55:53.964
+!MESSAGE Executable extension definition for "class" not found.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-02-12 09:55:54.489
+!MESSAGE Initialized a new Cognito identity us-east-1:d495beb4-36b1-42d4-90f9-d3925842cfcd
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 10 2017-02-12 10:00:49.939
+!MESSAGE Updating the index from remote failed. ; version: 2.0.1.v20160605-1811
+!STACK 0
+org.apache.http.conn.ConnectTimeoutException: Connect to www.eclipse.org:443 [www.eclipse.org/198.41.30.198] failed: Read timed out
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:134)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.downloadDatabase(IO.java:171)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerProblemsHistory$UpdateIndexJob.run(ServerProblemsHistory.java:280)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:973)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1375)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1403)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1387)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	... 13 more

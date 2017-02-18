@@ -1,23 +1,152 @@
 package com.ctci;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.regex.Pattern;
 
 public class DynamicProgramming {
+	public class Point{
+		int row;
+		int column;
+		
+		 Point(int row, int column){
+			 this.row=row;
+			 this.column=column;
+		 }
+		
+		public int getRow() {
+			return row;
+		}
+		public void setRow(int row) {
+			this.row = row;
+		}
+		public int getColumn() {
+			return column;
+		}
+		public void setColumn(int column) {
+			this.column = column;
+		}
+		@Override
+		public int hashCode(){
+			return (row*2)+row+column;
+		}
+		public boolean equals(Point p){
+		if(this.row==p.row && this.column==p.column){
+			return true;
+		}
+		return false;
+		}
+		
+	}
+	
 	int[] arr;
 	public static void main(String[] args) {
 	// For Question 1
 		DynamicProgramming dp = new DynamicProgramming();
-		
+		 boolean[][] blocked = new boolean[5][5];
+		 blocked[2][0]=true;
+		 blocked[0][2]=true;
+		 blocked[3][2]=true;
 
 //		int[] a={8,5,5,4,3,4,5,3,5,6};
 //		a=dp.mergesort(a, 0, a.length-1);
 //		for(int aa:a){
 //			System.out.println(aa);
 //		}
-		String s=null;
-		System.out.println(s.hashCode());
+		 
+		 
+		 
+		 
+		 
+		 //Question3: magic number
+//		 ArrayList<Point> path=dp.robotInAGridQ2(blocked);
+//		 
+//		 for(Point p:path){
+//			 System.out.println(p.row+" "+p.column);
+//		 }
+		 
+		 int[] arr={-3,0,1,4,5,6,7,8,9};
+		 
+		// int i=dp.magicNumberQ3(arr,0,arr.length-1);
+		 //System.out.println(i);
+	
 	}
+	
+	
+	int magicNumberQ3(int[] arr, int start, int end){
+		if(end<start){
+			return -1;
+		}
+		int mid=(start+end)/2;
+		if(arr[mid]==mid){
+			return mid;
+		}
+		int output;
+		if(arr[mid]<mid){
+			output=magicNumberQ3(arr,start,arr[mid]);
+			
+		}else{
+			output= magicNumberQ3(arr,start,mid-1);	
+		}
+		if(output>-1){
+			return output;
+		}
+		
+		if(arr[mid]>mid){
+			output= magicNumberQ3(arr,arr[mid], end);	
+		}else{
+			output= magicNumberQ3(arr,mid+1,end);	
+		}
+		if(output>-1){
+			return output;
+		}
+		
+		
+		
+	return -1;
+	}
+	
+	
+	
+	
+	ArrayList<Point> robotInAGridQ2(boolean[][] blocked){
+		
+		ArrayList<Point> path = new ArrayList<Point>();
+		HashSet<Point> traversed= new HashSet<Point>();
+		path=robotInAGridQ2(blocked, blocked.length-1, blocked[0].length-1,path,traversed);
+		return path;
+	}
+	
+	ArrayList<Point> robotInAGridQ2(boolean[][] blocked,int row,int column, ArrayList<Point> path,HashSet<Point> traversed){
+		Point point = new Point(row,column);
+		if(row<0||column<0||blocked[row][column] ||traversed.contains(point)){
+			return null;
+		}
+		if(traversed.contains(point)){
+			return null;
+		}
+		
+		if((row==0 && column==0) ||(null!=robotInAGridQ2(blocked,row-1,column,path,traversed)) || (null!=robotInAGridQ2(blocked,row,column-1,path,traversed))){
+			path.add(point);
+			traversed.add(point);
+			return path;
+		}
+		
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	int[] mergesort(int[] arr, int l, int r){
 		
